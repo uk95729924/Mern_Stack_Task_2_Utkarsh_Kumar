@@ -1,0 +1,115 @@
+/* Define the light and dark theme colors */
+:root {
+    --bg-light: #ffffff;
+    --bg-dark: #000000;
+    --text-light: #2c3e50;
+    --text-dark: #ecf0f1;
+    --button-light: #065ca8;
+    --button-dark: #e74c3c;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #34495e;
+    --border-radius: 8px;
+  }
+  
+  /* Default theme (light mode) */
+  [data-theme="light"] {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+  }
+  
+  [data-theme="dark"] {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: var(--button-light);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar h1 {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  /* Main content section */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Card style for the theme section */
+  .card {
+    background-color: var(--card-bg-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  [data-theme="dark"] .card {
+    background-color: var(--card-bg-dark);
+  }
+  
+  /* Button to toggle theme */
+  .theme-toggler {
+    padding: 10px 20px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--button-light);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .theme-toggler:hover {
+    transform: scale(1.05);
+  }
+  
+  [data-theme="dark"] .theme-toggler {
+    background-color: var(--button-dark);
+  }
+  
+  /* Smooth transition on hover and active states */
+  .theme-toggler:active {
+    transform: scale(0.98);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  
+    .theme-toggler {
+      width: 100%;
+    }
+  }
+  
